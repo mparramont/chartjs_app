@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Year:
+  = @sale.year
+%p
+  %strong Month:
+  = @sale.month
+%p
+  %strong Sales:
+  = @sale.sales
+= link_to 'Edit', edit_sale_path(@sale)
+|
+\#{link_to 'Back', sales_path}

@@ -1,0 +1,21 @@
+%h1 Listing sales
+%table.sales
+  %thead
+    %tr
+      %th Year
+      %th Month
+      %th Sales
+      %th{:colspan => "3"}
+  %tbody
+    - @sales.each do |sale|
+      %tr
+        %td= sale.year
+        %td= sale.month
+        %td= sale.sales
+        %td= link_to 'Show', sale
+        %td= link_to 'Edit', edit_sale_path(sale)
+        %td= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+  = link_to 'New Sale', new_sale_path
+%br
+%canvas#canvas{:height => "400", :width => "600"}

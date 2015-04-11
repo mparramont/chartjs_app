@@ -1,0 +1,23 @@
+= form_for(@sale) do |f|
+  - if @sale.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@sale.errors.count, "error")
+        prohibited this sale from being saved:
+      %ul
+        - @sale.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :year
+    %br
+      = f.number_field :year
+  .field
+    = f.label :month
+    %br
+      = f.number_field :month
+  .field
+    = f.label :sales
+    %br
+      = f.text_field :sales
+  .actions
+    = f.submit
